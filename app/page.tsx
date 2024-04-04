@@ -37,6 +37,9 @@ export default function Home() {
         if (r.access_token && r.token_type === "bearer") {
           localStorage.setItem("taskAccessToken", r.access_token);
           setLoginStatus(true);
+          const url = new URL(window.location.href);
+          url.searchParams.delete("code");
+          window.history.pushState({}, "", url.toString());
         }
       })
       .catch((err) => console.log(err));
