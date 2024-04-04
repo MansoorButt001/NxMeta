@@ -166,7 +166,7 @@ export default function Home() {
           Login
         </button>
       </div>
-      {loginStatus ? (
+      {!loginStatus ? (
         <div className="flex items-center justify-around min-w-56 p-24">
           <button disabled className="rounded-full border-2 py-2 px-6">
             Check the Rule
